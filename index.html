@@ -77,6 +77,10 @@
     body.nav-open { overflow: hidden; }
 
     img, svg { display: block; max-width: 100%; }
+    /* The width/height HTML attributes act as presentational hints. Setting only
+       width in CSS leaves the height hint active, which stretches the image.
+       Rules that need a fixed height (lesson art, headshot) override this. */
+    img { height: auto; }
     button, input, select, textarea { font: inherit; }
     a { color: inherit; }
     a, button { -webkit-tap-highlight-color: transparent; }
@@ -211,7 +215,7 @@
       background: var(--teal); color: var(--white); border-radius: 50%; font-size: .68rem;
     }
 
-    .hero-visual { position: relative; width: 100%; max-width: 480px; margin-left: auto; }
+    .hero-visual { position: relative; width: 100%; max-width: 520px; margin-left: auto; }
     .art-frame {
       position: relative; padding: 12px;
       background: rgba(255,255,255,.94);
@@ -233,7 +237,7 @@
     .art-dots i:nth-child(2) { background: var(--teal); }
     .art-dots i:nth-child(3) { background: var(--amber); }
     .art-label { font-size: .66rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-    .art-frame img { width: 100%; border-radius: 16px; }
+    .art-frame img { width: 100%; height: auto; border-radius: 16px; }
     .art-caption {
       position: absolute; left: 16px; bottom: -20px;
       padding: 9px 15px;
@@ -870,10 +874,10 @@
         <div class="lesson-grid">
           <!-- Eco-Responders -->
           <article class="lesson" data-domain="life" data-lesson="eco">
-            <div class="lesson-art is-centered art-eco">
+            <div class="lesson-art">
               <span class="lesson-time">60–75 min</span>
-              <img src="eco-responders-badge.png" width="759" height="741"
-                   alt="Eco-Responders Environmental Investigators team badge showing four students in a desert riparian landscape." />
+              <img src="eco-responders-badge.png" width="1440" height="810"
+                   alt="A park ranger, a student investigator, and a response worker reviewing wildfire recovery data on a map table inside a mobile command centre." />
             </div>
             <div class="lesson-body">
               <div class="tags"><span class="tag">Life science</span><span class="tag tag-teal">5.L4U3.11</span></div>
